@@ -14,7 +14,7 @@ const data = {
 
 export const resolvers = {
     Book: {
-        author: (parent, args, context, info) => {
+        author: (parent, args, context, info) => { // add values to Book.author property
             console.log(parent);
             return data.authors.find(authorDetail => authorDetail.id === parent.authorId);
 
