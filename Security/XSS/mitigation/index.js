@@ -4,10 +4,10 @@ const PORT = 3010;
 const app = express();
 
 app.use((req, res, next) => {
-    res.setHeader(
+    res.setHeader( // set CSP from server side for the html page
         'Content-Security-Policy',
         "default-src 'self';" + 
-        "script-src 'self' 'nonce-randomKey' 'unsafe-inline' http://unsecure.com;"
+        "script-src 'self' 'nonce-randomKey' 'unsafe-inline' http://unsecure.com;" // unsafe-inline allows all inline script. nonce only allows inline script with the hash value, so here untrusted js code wont be executed
     );
     next();
 })
