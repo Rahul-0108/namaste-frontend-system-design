@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/getData', (req, res) => {
-  if (data !== req.query.lastData) {
+  if (data !== req.query.lastData) { //lastData value is ent by client to check if data is updated on server
     res.json({ data });
   } else {
     waitingClients.push(res);
