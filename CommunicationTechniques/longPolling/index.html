@@ -18,7 +18,7 @@
         const response = await fetch(`/getData?lastData=${lastData}`);
         const result = await response.json();
         document.getElementById('data-container').innerHTML = result.data;
-        getData(result.data);
+        getData(result.data); // make connection with the updated value
       } catch(e) {
         console.log(e);
         // please handle error scenario
