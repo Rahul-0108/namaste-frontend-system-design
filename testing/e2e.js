@@ -9,7 +9,7 @@ const puppeteer = require("puppeteer");
 
   const page = await browser.newPage();
 
-  await page.goto("https://amazon.com");
+  await page.goto("https://namastedev.com");
 
   console.log("Webpage Loaded");
 
