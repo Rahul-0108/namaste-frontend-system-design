@@ -1,5 +1,5 @@
 import { Tutorials } from '../tutorial'
-
+// rsc-page is the route and page.js is the default page
 async function fetchVideos() {
   // await new Promise((resolve) => setTimeout(resolve, 3000))
   const videos = await fetch('http://localhost:4000/tutorials').then((res) =>
@@ -9,7 +9,7 @@ async function fetchVideos() {
 }
 
 export default async function RscPage() {
-  console.log('Where did you render?');
+  console.log('Where did you render?'); // This will be rendered on server side
   const videos = await fetchVideos();
   return (
     <>
