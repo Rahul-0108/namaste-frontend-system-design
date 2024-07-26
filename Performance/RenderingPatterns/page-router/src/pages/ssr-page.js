@@ -26,6 +26,7 @@ const Tutorials = ({ video }) => {
 }
 
 export default function Home({ videos }) {
+  // hooks cant be used in servers, it is only meant for clients
   return (
     <>
     <h1>Tutorials</h1>
