@@ -4,7 +4,7 @@ if (navigator.serviceWorker) {
 
   navigator.serviceWorker
     .register("./sw.js", {
-      scope: "./",
+      scope: "./", // global scope
     })
     .then((res) => {
       console.log("Service worker registered successfully");
