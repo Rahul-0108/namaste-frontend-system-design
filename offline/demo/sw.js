@@ -18,7 +18,7 @@ self.addEventListener("install", (e) => {
 self.addEventListener("activate", (e) => {
   // Clean up useless cache
   e.waitUntil(
-    caches.keys().then((keyList) => { // jeyList is main cache name , like CACHE_NAME
+    caches.keys().then((keyList) => { // keyList is main cache name , like CACHE_NAME
       return Promise.all(
         keyList.map((key) => {
           if (key != CACHE_NAME) {
