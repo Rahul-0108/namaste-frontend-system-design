@@ -18,11 +18,11 @@ self.addEventListener("install", (e) => {
 self.addEventListener("activate", (e) => {
   // Clean up useless cache
   e.waitUntil(
-    caches.keys().then((keyList) => {
+    caches.keys().then((keyList) => { // jeyList is main cache name , like CACHE_NAME
       return Promise.all(
         keyList.map((key) => {
           if (key != CACHE_NAME) {
-            return caches.delete(key);
+            return caches.delete(key); /
           }
         })
       );
