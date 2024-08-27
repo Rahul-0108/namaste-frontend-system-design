@@ -17,7 +17,8 @@ app.use(session({
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Serve HTML form
-app.get('/', (req, res) => {
+app.get('/', (req, res) => { // when the webpage is rendered for the first time, set anti csrf token in session and hidden input
+  // so when form in submitten, csrf token is also sent with request
   // Generate CSRF token and store it in the session
   if (!req.session.csrfToken) {
     req.session.csrfToken = crypto.randomBytes(32).toString('hex');
