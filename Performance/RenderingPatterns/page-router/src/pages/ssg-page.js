@@ -38,7 +38,7 @@ export default function Home({ videos }) {
   )
 }
 
-// This gets called on every request
+// This gets called on every request only in dev env, in prod html is generated at build time only
 export async function getStaticProps() {
   // Fetch data from external API
   await new Promise((resolve) => setTimeout(resolve, 3000))
