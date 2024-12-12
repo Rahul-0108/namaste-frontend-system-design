@@ -4,7 +4,7 @@ const puppeteer = require("puppeteer");
   const browser = await puppeteer.launch({
     headless: false,
     slowMo: 100,
-    args: ["--window-size=1920,1080"],
+    args: ["--start-maximized],
   });
 
   const page = await browser.newPage();
