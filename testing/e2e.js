@@ -15,12 +15,6 @@ const puppeteer = require("puppeteer");
 
   await page.setViewport({ width: 1620, height: 1080 });
 
-  const coursesPageLink = ".menu > li:nth-child(3) > a";
-
-  await page.waitForSelector(coursesPageLink);
-
-  await page.click(coursesPageLink);
-
   console.log("Courses Page Loaded");
 
   const enrollButton = ".bg-success-btn";
@@ -28,9 +22,17 @@ const puppeteer = require("puppeteer");
 
   await page.click(enrollButton);
 
-  console.log("Namaste FSD page loaded");
+    // Select the element using its class and get its text content
+  const elementText = await page.$eval('.test-class', el => el.textContent);
 
-  // await browser.close();
+  // Assert the value
+  if (elementText === 'Expected Value') {
+    console.log('Test passed');
+  } else {
+    console.log('Test failed');
+  }
+
+  await browser.close();
 })();
 
 // HomeWork:
